@@ -1,0 +1,394 @@
+///
+/// Dimension by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Header */
+
+	#header {
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		@include vendor('align-items', 'center');
+		@include vendor('transition', (
+			'transform #{_duration(article)} ease-in-out',
+			'filter #{_duration(article)} ease-in-out',
+			'opacity #{_duration(article)} ease-in-out',
+		));
+		background-image: -moz-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
+		background-image: -webkit-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
+		background-image: -ms-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
+		background-image: radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
+		max-width: 100%;
+		text-align: center;
+
+		> * {
+			@include vendor('transition', 'opacity #{_duration(article)} ease-in-out');
+			position: relative;
+			margin-top: 3.5rem;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc(-3.5rem - 1px);
+				left: calc(50% - #{_size(border-width) * 1});
+				width: _size(border-width);
+				height: calc(3.5rem + 1px);
+				background: _palette(border);
+			}
+		}
+
+		> :first-child {
+			margin-top: 0;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		.logo {
+			width: 5.5rem;
+			height: 5.5rem;
+			line-height: 5.5rem;
+			border: solid _size(border-width) _palette(border);
+			border-radius: 100%;
+
+			.icon {
+				&:before {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		.typewriter h1 {
+			padding-right: 5px;
+			overflow: hidden; /* Ensures the content is not revealed until the animation */
+			border-right: .15em solid hsla(15, 90%, 31%, 0.356); /* The typwriter cursor */
+			white-space: nowrap; /* Keeps the content on a single line */
+			margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+			letter-spacing: .15em; /* Adjust as needed */  
+			animation: 
+				typing 3s steps(30, end),
+				blinking-cursor .75s step-end infinite;
+		}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blinking-cursor {
+  from, to { border-color: hsla(15, 90%, 31%, 0.356) }  
+  50% { border-color: hsl(345, 70%, 50%); }
+}
+
+.title {  
+  padding-top:15px;
+  color: #fff; 
+  z-index: 100;
+  font-family: 'Major Mono Display', monospace;
+}
+@keyframes atom {
+  from { transform: none; }
+  to { transform: translateY(-5px); }
+}
+@keyframes electron-circle1 {
+  from { transform: rotateY(70deg) rotateZ(20deg); }
+  to { transform: rotateY(70deg) rotateZ(380deg); }
+}
+@keyframes electron1 {
+  from { transform: rotateZ(-20deg) rotateY(-70deg); }
+  to { transform: rotateZ(-380deg) rotateY(-70deg); }
+}
+@keyframes electron-circle2 {
+  from { transform: rotateY(60deg) rotateX(60deg) rotateZ(-30deg); }
+  to { transform: rotateY(60deg) rotateX(60deg) rotateZ(330deg); }
+}
+@keyframes electron2 {
+  from { transform: rotateZ(30deg) rotateX(-60deg) rotateY(-60deg); }
+  to { transform: rotateZ(-330deg) rotateX(-60deg) rotateY(-60deg); }
+}
+@keyframes electron-circle3 {
+  from { transform: rotateY(-60deg) rotateX(60deg) rotateZ(100deg); }
+  to { transform: rotateY(-60deg) rotateX(60deg) rotateZ(460deg); }
+}
+@keyframes electron3 {
+  from { transform: rotateZ(-100deg) rotateX(-60deg) rotateY(60deg); }
+  to { transform: rotateZ(-460deg) rotateX(-60deg) rotateY(60deg); }
+}
+
+
+.atom {
+  margin: 50px auto;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  animation: atom 1s ease-in-out infinite alternate;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+.atom:before {
+	content: '';
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #555;
+}
+.atom .electron {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+	width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 2px solid hsl(345, 70%, 50%);
+  transform-style: preserve-3d;
+}
+.atom .electron:before {
+	content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: rgb(144, 21, 21);
+  transform-origin: 50% 50% 0;
+}
+.atom .electron:nth-child(1) {
+  transform: rotateY(70deg) rotateZ(20deg);
+  animation: electron-circle1 2s linear infinite;
+}
+.atom .electron:nth-child(2) {
+  transform: rotateY(60deg) rotateX(60deg) rotateZ(-30deg);
+  animation: electron-circle2 2s linear infinite;
+}
+.atom .electron:nth-child(3) {
+  transform: rotateY(-60deg) rotateX(60deg) rotateZ(100deg);
+  animation: electron-circle3 2s linear infinite;
+}
+.atom .electron:nth-child(1):before {
+  transform: rotateZ(-20deg) rotateY(-70deg);
+  animation: electron1 2s linear infinite;
+}
+.atom .electron:nth-child(2):before {
+  transform: rotateZ(30deg) rotateX(-60deg) rotateY(-60deg);
+  animation: electron2 2s linear infinite;
+}
+.atom .electron:nth-child(3):before {
+  transform: rotateZ(-100deg) rotateX(-60deg) rotateY(60deg);
+  animation: electron3 2s linear infinite;
+}
+
+		.content {
+			border-style: solid;
+			border-color: _palette(border);
+			border-top-width: _size(border-width);
+			border-bottom-width: _size(border-width);
+			max-width: 100%;
+
+			.inner {
+				@include vendor('transition', (
+					'max-height #{_duration(intro)} ease',
+					'padding #{_duration(intro)} ease',
+					'opacity #{_duration(article)} ease-in-out'
+				));
+				@include vendor('transition-delay', '0.25s');
+				padding: 3rem 2rem;
+				max-height: 40rem;
+				overflow: hidden;
+
+				> :last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			p {
+				text-transform: uppercase;
+				letter-spacing: _font(letter-spacing);
+				font-size: 0.8rem;
+				line-height: 2;
+			}
+		}
+
+		nav {
+			ul {
+				@include vendor('display', 'flex');
+				margin-bottom: 0;
+				list-style: none;
+				padding-left: 0;
+				border: solid _size(border-width) _palette(border);
+				border-radius: _size(border-radius);
+
+				li {
+					padding-left: 0;
+					border-left: solid _size(border-width) _palette(border);
+
+					&:first-child {
+						border-left: 0;
+					}
+
+					a {
+						display: block;
+						min-width: 7.5rem;
+						height: 2.75rem;
+						line-height: 2.75rem;
+						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
+						text-transform: uppercase;
+						letter-spacing: _font(letter-spacing);
+						font-size: 0.8rem;
+						border-bottom: 0;
+
+						&:hover {
+							background-color: _palette(border-bg);
+						}
+
+						&:active {
+							background-color: _palette(border-bg-alt);
+						}
+					}
+				}
+			}
+
+			&.use-middle {
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: calc(50% - #{_size(border-width) * 1});
+					width: _size(border-width);
+					height: 100%;
+					background: _palette(border);
+				}
+
+				ul {
+					li {
+						&.is-middle {
+							border-left: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.body.is-article-visible & {
+			@include vendor('transform', 'scale(0.95)');
+			@include vendor('filter', 'blur(0.1rem)');
+			opacity: 0;
+		}
+
+		.body.is-loading & {
+			> * {
+				opacity: 0;
+			}
+
+			@include vendor('filter', 'blur(0.125rem)');
+
+			.content {
+				.inner {
+					max-height: 0;
+					padding-top: 0;
+					padding-bottom: 0;
+					opacity: 0;
+				}
+			}
+		}
+
+		@include breakpoint(medium) {
+			.content {
+				p {
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@include breakpoint(small) {
+			> * {
+				margin-top: 2rem;
+
+				&:before {
+					top: calc(-2rem - 1px);
+					height: calc(2rem + 1px);
+				}
+			}
+
+			.logo {
+				width: 4.75rem;
+				height: 4.75rem;
+				line-height: 4.75rem;
+
+				.icon {
+					&:before {
+						font-size: 1.75rem;
+					}
+				}
+			}
+
+			.content {
+				.inner {
+					padding: 2.5rem 1rem;
+				}
+
+				p {
+					line-height: 1.875;
+				}
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			padding: 1.5rem 0;
+
+			.content {
+				.inner {
+					padding: 2.5rem 0;
+				}
+			}
+
+			nav {
+				ul {
+					@include vendor('flex-direction', 'column');
+					min-width: 10rem;
+					max-width: 100%;
+
+					li {
+						border-left: 0;
+						border-top: solid _size(border-width) _palette(border);
+
+						&:first-child {
+							border-top: 0;
+						}
+
+						a {
+							height: 3rem;
+							line-height: 3rem;
+							min-width: 0;
+							width: 100%;
+						}
+					}
+				}
+
+				&.use-middle {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
