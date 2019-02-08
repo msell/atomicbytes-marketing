@@ -18,16 +18,13 @@ const Header = props => (
         <h1 className="title">Atomic Bytes</h1>
     </div>
         <p>
-          Custom Software Solutions and Professional Services
-          {/* <br />
-          for free under the{' '}
-          <a href="https://html5up.net/license">Creative Commons</a> license. */}
+          Custom Software Solutions and Professional Services         
         </p>
       </div>
     </div>
     <nav>
       <ul>
-        <li>
+        {/* <li>
           <a
             href="javascript:;"
             onClick={() => {
@@ -36,8 +33,8 @@ const Header = props => (
           >
             Intro
           </a>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <a
             href="javascript:;"
             onClick={() => {
@@ -46,7 +43,7 @@ const Header = props => (
           >
             Work
           </a>
-        </li>
+        </li> */}
         <li>
           <a
             href="javascript:;"
