@@ -31,7 +31,7 @@ class Main extends React.Component {
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">About</h2>
           <span className="image main"><img src={pic04} alt="" /></span>
-          <p>We are passionate software engineers with a commitment to excellence.  Our clients success is the key to our success.  We have experience building cross-platform desktop solutions, native mobile applications, rich web applications, distributed services, test automation, and modern cloud architectures.</p>
+          <p>We are passionate software engineers with a commitment to excellence.  Our client's success is the key to our success.  We have experience building cross-platform desktop solutions, native mobile applications, rich web applications, distributed services, and test automation using modern cloud architectures.</p>
           {close}
         </article>
 
